@@ -16,12 +16,10 @@ controlled costs such that the quality of clinical care is not compromised.
 
 ## Project Description
 The project covers data cleaning, analysis, visualisation and recommendations to address the highlighted business questions. This analysis of healthcare data examines the relationship between records containing 
-patients, insurance, procedures and encounters data. It features an interactive dashboard with 3 pages highlighting Patient Overview, Costs Analysis and Admissions Patterns. Insights and recommendations are also
-provided to guide stakeholders during decision-making.
+patients, insurance, procedures and encounters data. It features an interactive dashboard with 3 pages highlighting Patient Overview, Costs Analysis and Admissions Patterns. Insights and recommendations are also provided to guide stakeholders during decision-making.
 
 ## Project Aim
-To analyze hospital data to answer key business questions such as 30-day readmission rates, average cost by encounter class, insurance coverage gaps, length-of-stay patterns across age groups, and cost trends 
-over time. To use uncovered insights as the basis of recommendations that improve patient care and support better resource utilization.
+To analyze hospital data to answer key business questions such as 30-day readmission rates, average cost by encounter class, insurance coverage gaps, length-of-stay patterns across age groups, and cost trends over time. To use uncovered insights as the basis of recommendations that improve patient care and support better resource utilization.
 
 ## About the data
 
@@ -53,45 +51,30 @@ The CSV files were loaded into Power Query in Power BI for data cleaning. The cl
 - Removing irrelevant columns
 - Standardizing the Name column
 
-## Data Analysis & Data Visualisation
-### Dashboard Page 1 - Patients 
-KPI Cards - Total Patients, Total Insured Patients, Total Female Patients, Total Male Patients
+## Data Analysis
+After data cleaning, the tables - patients, encounters, procedures and payers table were connected in a relational model using their key columns.
 
-Line Chart - Total Patients By Year
+Calculated columns that were added to the dataset to answer the business questions include:
 
-Line Chart - Total Insured Patients By Year
+- Length of Stay: This is to determine the duration of an encounter.
+- Pay Out of Pocket: This is the billing amount not covered by insurance, paid by the patient.
+- 30-day Readmission Flag: This column indicates patients that were readmitted within 30 days.
+- Age Group: This column separates the patients into different groups based on their age for demographic analysis.
 
-Donut Chart - Count of Alive Patients vs Deceased Patients
+The values on the KPI cards across the dashboard were derived using DAX calculations. Below are some DAX functions that were used during the analysis and the KPI
+measures they were used to calculate:
+-  **SUM** (Aggregating raw values across records) - Total Claim Cost, Total Pay out of pocket, Total Payer coverage
+- **AVERAGE** (Calculating mean values) - Average Length of Stay
+- **COUNTROWS** (Counts number of rows in a table) - Total patients, Total Encounters
+- **DIVIDE** (Calculating safe ratios/percentages) - Readmission Rate, Payer Coverage % 
+- **CALCULATE** (Applying filtered/conditional logic) - 30-Day Readmission Rate (filtered by date difference), Total Male and Total Female Patients (filtered by gender).
 
-Donut Chart - Count of Married Patients vs Single Patients
+## Data Visualization
 
-Bar Chart - Total Patients By Race
+<img width="1449" height="815" alt="Dashboard Page 1" src="https://github.com/user-attachments/assets/a7ef543d-8950-45f7-91f2-fd9eac48ab22" />
+<img width="1452" height="812" alt="Dashboard Page 2" src="https://github.com/user-attachments/assets/010e11cd-c5bd-4f03-95da-d7c1e02770a6" />
+<img width="1450" height="814" alt="Dashboard Page 3" src="https://github.com/user-attachments/assets/c03f1748-6027-4eea-a1e6-6362581ab3ed" />
 
-### Dashboard Page 2 - Costs
-KPI Cards - Total Claim Cost, Payer Coverage%, Total Payer Coverage, Total Pay Out of Pocket
-
-Column Chart - Payer Coverage By Payer
-
-Line Chart - Total Claim Cost By Year
-
-Table Visual - Payer Coverage By Encounter Class
-
-Column Chart - Top 5 Most Frequent Procedures
-
-Bar Chart - Total Claim Cost By Encounter Class
-
-### Dashboard Page 3 - Admissions
-KPI Cards - Average Length of Stay (Hours), Total Admissions, Total Encounters, Readmission Rate
-
-Bar Chart - Average Length of Stay By Encounter Class
-
-Bar Chart - Total Encounters By Encounter Class
-
-Line Chart - Readmission Rate By Year
-
-Table Visual - Average Length of Stay and Readmission Rate By Age Group
-
-Column Chart - Patients Readmitted Within 30 Days
 
 ## Key Insights
 ### Dashboard Page 1 - Patients
@@ -126,6 +109,9 @@ Column Chart - Patients Readmitted Within 30 Days
   
 The recommendations primarily focus on strengthening discharge planning, optimizing resource allocation, expanding insurance partnerships, and continuously monitoring patient and financial performance to 
 improve healthcare quality, operational efficiency and financial sustainability.
+
+## Limitations of the Dataset
+In the Encounters dataset, it was not explicitly clear which patients were admitted or not. Using the encounter class and/or length of stay was found to be misleading because none of them proved to be a consistent indicator of the admission status. For that reason, only patients identified as inpatients were considered to be admitted patients because that was the only unambiguous and reliable data to support that classification.
 
 ## Conclusion
 This project involved analyzing Massachusetts General Hospital's patient, admission, and cost data using Power BI to answer practical hospital questions — from readmission rates to insurance coverage gaps. 
