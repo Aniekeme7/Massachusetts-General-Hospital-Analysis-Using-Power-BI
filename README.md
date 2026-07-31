@@ -2,7 +2,7 @@
 Analysis of healthcare data from Massachusetts General Hospital to derive actionable insights for data-driven healthcare and operational decisions
 
 ## Introduction
-This is a real-world dataset generated from Massachusetts General Hospital that contains records of patient demographic data, hospital encounters and admissions, procedures and insurance coverage.
+This is a realistic synthetic dataset showing hospital data that contains records of patient demographic data, hospital encounters and admissions, procedures and insurance coverage.
 Through DAX calculations, data modeling and interactive visuals, this analysis answers business questions such as:
 - How many patients are readmitted within 30 days of discharge?
 - What is the average cost by encounter class?
@@ -10,19 +10,19 @@ Through DAX calculations, data modeling and interactive visuals, this analysis a
 - Do older patients experience longer hospital stays than younger patients?
 - Are healthcare costs increasing over the years?
 
-This analysis is important because it guides stakeholders to identify encounters and readmissions patterns, gaps in insurance coverage, and cost drivers. The insights uncovered drives a proactive response to
-reducing preventable readmissions, ensuring optimal resource utilization and ultimately, improving patient health outcomes. This project is designed to ensure that limited resources are well managed at 
-controlled costs such that the quality of clinical care is not compromised.
+This analysis is important because it guides stakeholders to identify encounters and readmissions patterns, gaps in insurance coverage, and cost drivers. The insights uncovered drives a proactive response toreducing preventable readmissions, ensuring optimal resource utilization and ultimately, improving patient 
+health outcomes. This project is designed to ensure that limited resources are well managed at controlled costs such that the quality of clinical care is not compromised.
 
 ## Project Description
-The project covers data cleaning, analysis, visualisation and recommendations to address the highlighted business questions. This analysis of healthcare data examines the relationship between records containing 
-patients, insurance, procedures and encounters data. It features an interactive dashboard with 3 pages highlighting Patient Overview, Costs Analysis and Admissions Patterns. Insights and recommendations are also provided to guide stakeholders during decision-making.
+The project covers data cleaning, analysis, visualisation and recommendations to address the highlighted business questions. This analysis of healthcare data examines the relationship between records containing patients, insurance, procedures and encounters data. It features an interactive dashboard with 3 
+pages highlighting Patient Overview, Costs Analysis and Admissions Patterns. Insights and recommendations are also provided to guide stakeholders during 
+decision-making.
 
 ## Project Aim
 To analyze hospital data to answer key business questions such as 30-day readmission rates, average cost by encounter class, insurance coverage gaps, length-of-stay patterns across age groups, and cost trends over time. To use uncovered insights as the basis of recommendations that improve patient care and support better resource utilization.
 
 ## About the data
-
+The dataset was sourced from Maven Analytics.
 The analysis was conducted using a healthcare dataset from Massachusetts General Hospital. The dataset comprises six tables, of which five were used for this analysis: 
 
 Patients Table - It contains 20 columns and 974 rows with the key column being Patient ID
@@ -92,9 +92,9 @@ measures they were used to calculate:
 - Patients aged 35–49 years recorded the highest readmission rate (2.78%), followed by 65 years and above (2.07%), while patients aged 50–64 years had the lowest readmission rate (1.50%).
 
 ### Dashboard Page 3 - Admissions
-- The hospital recorded a total claim cost of ₦101.51M, with ₦31.10M covered by insurance and ₦70M paid out-of-pocket, indicating a high financial burden on patients.
-- Total claim costs peaked in 2014 (₦12.01M) and 2020 (₦10.29M), while 2022 (₦0.69M) recorded the lowest cost, likely because the dataset does not cover the full year.
-- Ambulatory care (₦36M) generated the highest total claim cost, followed by Urgent Care (₦23M). This is likely due to the high volume of encounters in these services.
+- The hospital recorded a total claim cost of $101.51M, with $31.10M covered by insurance and $70M paid out-of-pocket, indicating a high financial burden on patients.
+- Total claim costs peaked in 2014 ($12.01M) and 2020 ($10.29M), while 2022 ($0.69M) recorded the lowest cost, likely because the dataset does not cover the full year.
+- Ambulatory care ($36M) generated the highest total claim cost, followed by Urgent Care ($23M). This is likely due to the high volume of encounters in these services.
 - Wellness (53.74%) and Inpatient (41.86%) had the highest insurance coverage, while Urgent Care (13.10%) had the lowest, leaving many urgent care patients without coverage.
 
 ## Recommendations
@@ -107,8 +107,7 @@ measures they were used to calculate:
 - Prioritize post-discharge follow-up and patient education for patients aged 35–49 years to reduce avoidable readmissions.
 - Review resource utilization and treatment costs in high-volume encounter classes to identify opportunities for cost optimization without affecting care quality.
   
-The recommendations primarily focus on strengthening discharge planning, optimizing resource allocation, expanding insurance partnerships, and continuously monitoring patient and financial performance to 
-improve healthcare quality, operational efficiency and financial sustainability.
+The recommendations primarily focus on strengthening discharge planning, optimizing resource allocation, expanding insurance partnerships, and continuously monitoring patient and financial performance to improve healthcare quality, operational efficiency and financial sustainability.
 
 ## Limitations of the Dataset
 In the Encounters dataset, it was not explicitly clear which patients were admitted or not. Using the encounter class and/or length of stay was found to be misleading because none of them proved to be a consistent indicator of the admission status. For that reason, only patients identified as inpatients were considered to be admitted patients because that was the only unambiguous and reliable data to support that classification.
